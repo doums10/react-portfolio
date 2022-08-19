@@ -1,8 +1,21 @@
 import React from 'react'
 import "./Navbar.scss"
+import { images } from "../../constants"
 const Navbar = () => {
 		return (
-				<div>Navbar</div>
+				<nav>
+					<div>
+						<img src={images.logo2} alt="logo" />
+					</div>
+					<ul>{[
+						'home', 'about','work','skills','contact'
+					].map((item) => (
+							<li key={`link${item}`}>
+							<div />
+							<a href={`#link${item}`}>{item}</a>
+							</li>
+					))}</ul>
+				</nav>
 		)
 }
 
