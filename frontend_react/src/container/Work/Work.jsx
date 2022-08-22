@@ -4,8 +4,21 @@ import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import AppWrap from "../../wrapper/AppWrap";
 import { urlFor, client } from "../../client";
+
 const Work = () => {
 	const [activeFilter, setActiveFilter] = useState("All");
+	const [animateCard, seTAnimateCard] = useState({ y: 0, opacity: 1 });
+	const [works, setWorks] = useState([]);
+	const [filterWork, setFilterWork] = useState([]);
+
+	useEffect(() => {
+		const query = '*[_type == "works"]';
+		client.fetch(query).then((data) => {
+			setWorks(data);
+			setFilterWork(data);
+		});
+	}, []);
+
 	const handleWorkFilter = (item) => {};
 	return (
 		<>
@@ -27,7 +40,42 @@ const Work = () => {
 					)
 				)}
 			</div>
-			
+			<motion.div
+				animate={animateCard}
+				transition={{ duration: 0.5, delayChildren: 0.5 }}
+				className="app__work-portfolio"
+			>
+				{filterWork.map((work, index) => (
+					<div className="app__work-item app__flex" key={index}>
+						<div className="app__work-img app__flex">
+							<img src={urlFor(work.imgUrl)} alt={work.name} />
+							<motion.div
+								whileHover={{ opacity: [0, 1] }}
+								transition={{
+									duration: 0.25,
+									ease: 'easeinOut',
+									staggerChildren: 0.5,
+								}}
+								className="app__work-hover app__flex"
+							>
+								<a href={work.projectLink} target="_blank" rel="noreferrer">
+									<motion.div
+										whileinView={{ scale: [0, 1] }}
+										whileHover={{ scale: [1, 0.9] }}
+										transition={{
+											duration: 0.25,
+											
+										}}
+										className="app__flex"
+									>
+										<AiFillEye/>
+									</motion.div>
+								</a>
+							</motion.div>
+						</div>
+					</div>
+				))}
+			</motion.div>
 		</>
 	);
 };
