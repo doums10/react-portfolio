@@ -6,16 +6,15 @@ import "./About.scss";
 const abouts = [
 	{
 		title: "Front-End Developer",
-		description: "I am a front end developer. ",imgUrl:images.about01
+		description: "I am a front end developer. ",
+		imgUrl: images.front,
 	},
+	
 ];
 const About = () => {
 	return (
 		<>
-			<h2 className="head-text">
-				I Know that <span>Good Design</span> <br /> means
-				<span>Good Business </span>
-			</h2>
+			<h2 className="head-text">I Know that <span>Good Dev</span> <br /> means <span>Good Business </span></h2>
 			<div className="app__profiles">
 				{abouts.map((about,index) => (
 						<motion.div 
