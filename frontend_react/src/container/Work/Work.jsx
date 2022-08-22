@@ -5,7 +5,31 @@ import { motion } from "framer-motion";
 import AppWrap from "../../wrapper/AppWrap";
 import { urlFor, client } from "../../client"
 const Work = () => {
-	return <div>Work</div>;
+	const handleWorkFilter = (item) => {
+
+	}
+	return (
+		<>
+			<h2 className="head-text">
+				<span>Portfolio</span> 
+			</h2>
+			<div className="app__work-filter">
+			{['UI/UX','Javascript', 'React JS', 'Html/Css','All'].map((item, index) => {
+				<div 
+				className=""
+				key={index}
+				onClick={() => handleWorkFilter(item)}
+
+				
+				
+				
+				>
+
+				</div>
+			})}
+			</div>
+		</>
+	);
 };
 
 export default Work;
