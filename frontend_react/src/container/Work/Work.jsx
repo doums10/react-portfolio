@@ -21,10 +21,15 @@ const Work = () => {
 
 	const handleWorkFilter = (item) => {
 		setActiveFilter(item);
-    seTAnimateCard([{opacity:0, y:100}])
-    setTimeout(() => {
-      seTAnimateCard([{ opacity: 0, y: 100 }]);
-    }, 500);
+		seTAnimateCard([{ opacity: 0, y: 100 }]);
+		setTimeout(() => {
+			seTAnimateCard([{ opacity: 1, y: 0 }]);
+			if (item === "All") {
+				setFilterWork(works);
+			} else {
+				setFilterWork(works.filter((work) => work.tags.includes(item)));
+			}
+		}, 500);
 	};
 	return (
 		<>
