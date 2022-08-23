@@ -85,7 +85,7 @@ const Work = () => {
 									<motion.div
 										whileInView={{ scale: [0, 1] }}
 										whileHover={{ scale: [1, 0.9] }}
-										transition={{ duration: 0.25 }}
+										transition={{ duration: 0.6 }}
 										className="app__flex"
 									>
 										<AiFillGithub />
