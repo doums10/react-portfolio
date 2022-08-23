@@ -21,7 +21,7 @@ const Skills = () => {
 	}, []);
 	return (
 		<>
-			<h2 className="head-text">Skills and Experience</h2>
+			<h2 className="head-text">Skills</h2>
 			<div className="app__skills-container">
 				<motion.div className="app__skills-list">
 					{skills.map((skill) => (
@@ -44,4 +44,4 @@ const Skills = () => {
 	);
 };
 
-export default Skills;
+export default AppWrap(Skills,'skills');
