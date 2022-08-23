@@ -19,7 +19,13 @@ const Work = () => {
 		});
 	}, []);
 
-	const handleWorkFilter = (item) => {};
+	const handleWorkFilter = (item) => {
+		setActiveFilter(item);
+    seTAnimateCard([{opacity:0, y:100}])
+    setTimeout(() => {
+      seTAnimateCard([{ opacity: 0, y: 100 }]);
+    }, 500);
+	};
 	return (
 		<>
 			<h2 className="head-text">
