@@ -6,7 +6,9 @@
 .app__whitebg {
   background-color: var(--white-color);
 }
-
+.app__whitebg:last-child {
+  border-top: 1px solid #F2F7FB;
+}
 .app__primarybg {
   background-color: var(--primary-color);
 }
