@@ -27,6 +27,9 @@ import about04 from "../assets/about04.png";
 import front from "../assets/front.jpeg";
 
 import profile from "../assets/profile.png";
+import profil from "../assets/profil.png";
+import profil2 from "../assets/profil2.jpeg";
+import profil4 from "../assets/profil4.png";
 import circle from "../assets/circle.svg";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
@@ -67,6 +70,9 @@ export default {
 	about04,
 	front,
 	profile,
+	profil,
+	profil2,
+	profil4,
 	circle,
 	logo,
 	logo2,
